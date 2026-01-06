@@ -37,28 +37,227 @@ export const STEPS = [
         question: 'Você gostaria dessa persiana manual ou automática?',
         type: 'radio',
         options: [
-            { label: 'Manual (com corrente, haste ou bastão)', value: 'manual', nextStep: 'passo_4_tecido' },
-            { label: 'Motorizada', value: 'motorizada', nextStep: 'passo_4_tecido' },
-            { label: 'Ainda não sei', value: 'nao_sei', nextStep: 'passo_4_tecido' }
+            { label: 'Manual (com corrente, haste ou bastão)', value: 'manual', nextStep: 'passo_4_modelo' },
+            { label: 'Motorizada', value: 'motorizada', nextStep: 'passo_4_modelo' },
+            { label: 'Ainda não sei', value: 'nao_sei', nextStep: 'passo_4_modelo' }
         ]
     },
 
-    // [FASE 4] TECIDO
+    // [FASE 4] MODELO (Antigo Tecido)
     {
-        id: 'passo_4_tecido',
+        id: 'passo_4_modelo',
         phase: 4,
-        question: 'Tipo de Tecido',
+        question: 'Qual modelo você prefere?',
         type: 'radio',
         options: [
-            { label: 'Blackout — Bloqueia 100% da luz.', value: 'blackout', nextStep: 'passo_5_estagio' },
-            { label: 'Semi Blackout — Reduz significativamente a luz.', value: 'semi_blackout', nextStep: 'passo_5_estagio' },
-            { label: 'Translúcido — Filtra a luz suavemente.', value: 'translucido', nextStep: 'passo_5_estagio' },
-            { label: 'Tela Solar 1% — Privacidade máxima.', value: 'tela_solar_1', nextStep: 'passo_5_estagio' },
-            { label: 'Tela Solar 3% — Equilíbrio visibilidade/proteção.', value: 'tela_solar_3', nextStep: 'passo_5_estagio' },
-            { label: 'Tela Solar 5% — Visão externa e luz.', value: 'tela_solar_5', nextStep: 'passo_5_estagio' },
-            { label: 'Decorativo — Foco estético.', value: 'decorativo', nextStep: 'passo_5_estagio' },
-            { label: 'Outros — Antichama, etc.', value: 'outros', nextStep: 'passo_5_estagio' },
-            { label: 'Ainda não sei — Quero recomendação.', value: 'nao_sei', nextStep: 'passo_5_estagio' }
+            { label: 'Persiana Rolô', value: 'rolo', nextStep: 'passo_4_tecido_rolo' },
+            { label: 'Persiana Romana', value: 'romana', nextStep: 'passo_4_tecido_romana' },
+            { label: 'Persiana Double Vision', value: 'double_vision', nextStep: 'passo_4_tecido_double' },
+            { label: 'Persiana Vertical', value: 'vertical', nextStep: 'passo_4_tecido_vertical' },
+            { label: 'Horizontal de Madeira', value: 'madeira', nextStep: 'passo_4_tecido_madeira' },
+            { label: 'Horizontal de Alumínio', value: 'aluminio', nextStep: 'passo_4_tecido_aluminio' },
+            { label: 'Persiana de Teto', value: 'teto', nextStep: 'passo_4_modelo_teto' },
+            { label: 'Persiana Painel', value: 'painel', nextStep: 'passo_4_tecido_painel' },
+            { label: 'Cortina', value: 'cortina', nextStep: 'passo_4_tecido_cortina' }
+        ]
+    },
+
+    // [FASE 4.1] TECIDOS ROLÔ
+    {
+        id: 'passo_4_tecido_rolo',
+        phase: 4,
+        question: 'Escolha o tecido para sua Persiana Rolô:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Tecido FR Blackout', value: 'fr_blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Semi-blackout', value: 'semi_blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 1%', value: 'tela_1', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 3%', value: 'tela_3', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 5%', value: 'tela_5', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' },
+            { label: 'Tecido decorativo', value: 'decorativo', nextStep: 'passo_5_estagio' },
+            { label: 'Tecido FR Translúcido', value: 'fr_translucido', nextStep: 'passo_5_estagio' },
+            { label: 'Hospitalar Antimicrobiano', value: 'hospitalar', nextStep: 'passo_5_estagio' },
+            { label: 'Screen Metalizado 1%', value: 'metalizado_1', nextStep: 'passo_5_estagio' },
+            { label: 'Screen Metalizado 3%', value: 'metalizado_3', nextStep: 'passo_5_estagio' },
+            { label: 'Screen Metalizado 5%', value: 'metalizado_5', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.2] TECIDOS ROMANA
+    {
+        id: 'passo_4_tecido_romana',
+        phase: 4,
+        question: 'Escolha o tecido para sua Persiana Romana:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Semi-blackout', value: 'semi_blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 1%', value: 'tela_1', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 3%', value: 'tela_3', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 5%', value: 'tela_5', nextStep: 'passo_5_estagio' },
+            { label: 'Tecido decorativo', value: 'decorativo', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.3] TECIDOS DOUBLE VISION
+    {
+        id: 'passo_4_tecido_double',
+        phase: 4,
+        question: 'Escolha o tecido para sua Double Vision:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout com translucido', value: 'blackout_translucido', nextStep: 'passo_5_estagio' },
+            { label: 'Semi-Blackout com translucido', value: 'semi_blackout_translucido', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.4] TECIDOS VERTICAL
+    {
+        id: 'passo_4_tecido_vertical',
+        phase: 4,
+        question: 'Escolha o tecido para sua Persiana Vertical:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'PVC Blackout', value: 'pvc_blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' },
+            { label: 'Tecido decorativo', value: 'decorativo', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.5] TECIDOS MADEIRA
+    {
+        id: 'passo_4_tecido_madeira',
+        phase: 4,
+        question: 'Escolha o acabamento para sua Persiana de Madeira:',
+        type: 'radio',
+        options: [
+            { label: 'Madeira natural 50 mm com cadarço', value: 'natural_cadarco', nextStep: 'passo_5_estagio' },
+            { label: 'Madeira natural 50 mm com fita', value: 'natural_fita', nextStep: 'passo_5_estagio' },
+            { label: 'Eco wood com cadarço', value: 'eco_cadarco', nextStep: 'passo_5_estagio' },
+            { label: 'Eco wood com fita', value: 'eco_fita', nextStep: 'passo_5_estagio' },
+            { label: 'Bambu com cadarço', value: 'bambu_cadarco', nextStep: 'passo_5_estagio' },
+            { label: 'Bambu com fita', value: 'bambu_fita', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.6] TECIDOS ALUMÍNIO
+    {
+        id: 'passo_4_tecido_aluminio',
+        phase: 4,
+        question: 'Escolha o acabamento para sua Persiana de Alumínio:',
+        type: 'radio',
+        options: [
+            { label: 'Lâmina 16 mm (micro)', value: 'lamina_16', nextStep: 'passo_5_estagio' },
+            { label: 'Lâmina 25 mm (padrão)', value: 'lamina_25', nextStep: 'passo_5_estagio' },
+            { label: 'Lâmina 50 mm (larga)', value: 'lamina_50', nextStep: 'passo_5_estagio' },
+            { label: 'Perfurada (micro furos)', value: 'perfurada', nextStep: 'passo_5_estagio' },
+            { label: 'Acabamento brilhante ou métalico', value: 'brilhante', nextStep: 'passo_5_estagio' },
+            { label: 'Acabamento fosco ou acetinado', value: 'fosco', nextStep: 'passo_5_estagio' },
+            { label: 'Tonalidade amadeirada', value: 'amadeirada', nextStep: 'passo_5_estagio' },
+            { label: 'Com fita têxtil decorativa', value: 'fita_decorativa', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.7] MODELO TETO
+    {
+        id: 'passo_4_modelo_teto',
+        phase: 4,
+        question: 'Qual modelo de Persiana de Teto você prefere?',
+        type: 'radio',
+        options: [
+            { label: 'Persiana Romana de Teto', value: 'romana_teto', nextStep: 'passo_4_tecido_teto_romana' },
+            { label: 'Persianas celular de teto', value: 'celular_teto', nextStep: 'passo_4_tecido_teto_celular' },
+            { label: 'Persianas plissadas de teto', value: 'plissada_teto', nextStep: 'passo_4_tecido_teto_plissada' }
+        ]
+    },
+
+    // [FASE 4.7.1] TECIDOS TETO ROMANA
+    {
+        id: 'passo_4_tecido_teto_romana',
+        phase: 4,
+        question: 'Escolha o tecido para sua Romana de Teto:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 1%', value: 'tela_1', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 3%', value: 'tela_3', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 5%', value: 'tela_5', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.7.2] TECIDOS TETO CELULAR
+    {
+        id: 'passo_4_tecido_teto_celular',
+        phase: 4,
+        question: 'Escolha o tecido para sua Celular de Teto:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.7.3] TECIDOS TETO PLISSADA
+    {
+        id: 'passo_4_tecido_teto_plissada',
+        phase: 4,
+        question: 'Escolha o tecido para sua Plissada de Teto:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.8] TECIDOS PAINEL
+    {
+        id: 'passo_4_tecido_painel',
+        phase: 4,
+        question: 'Escolha o tecido para sua Persiana Painel:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_5_estagio' },
+            { label: 'Translúcida', value: 'translucida', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 1%', value: 'tela_1', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 3%', value: 'tela_3', nextStep: 'passo_5_estagio' },
+            { label: 'Tela solar 5%', value: 'tela_5', nextStep: 'passo_5_estagio' },
+            { label: 'Decorativa/Texturizada', value: 'decorativa', nextStep: 'passo_5_estagio' }
+        ]
+    },
+
+    // [FASE 4.9] TECIDOS CORTINA
+    {
+        id: 'passo_4_tecido_cortina',
+        phase: 4,
+        question: 'Escolha o tecido para sua Cortina:',
+        type: 'radio',
+        options: [
+            { label: 'Blackout', value: 'blackout', nextStep: 'passo_4_acabamento_cortina' },
+            { label: 'Semi-blacKout 70%', value: 'semi_blackout_70', nextStep: 'passo_4_acabamento_cortina' },
+            { label: 'Translúcido Voil', value: 'voil', nextStep: 'passo_4_acabamento_cortina' },
+            { label: 'Translúcido de Linho', value: 'linho', nextStep: 'passo_4_acabamento_cortina' },
+            { label: 'Cortina Dupla (Voil + Blackout)', value: 'dupla', nextStep: 'passo_4_acabamento_cortina' }
+        ]
+    },
+
+    // [FASE 4.9.1] ACABAMENTO CORTINA
+    {
+        id: 'passo_4_acabamento_cortina',
+        phase: 4,
+        question: 'Escolha o acabamento para sua Cortina:',
+        type: 'radio',
+        options: [
+            { label: 'Ilhós', value: 'ilhos', nextStep: 'passo_5_estagio' },
+            { label: 'Wave (Ripplefold)', value: 'wave', nextStep: 'passo_5_estagio' },
+            { label: 'Prega Americana (argola ou trilho)', value: 'americana', nextStep: 'passo_5_estagio' },
+            { label: 'Prega Macho (argola ou trilho)', value: 'macho', nextStep: 'passo_5_estagio' },
+            { label: 'Prega Fêmea (argola ou trilho)', value: 'femea', nextStep: 'passo_5_estagio' },
+            { label: 'Prega Franzida (argola ou trilho)', value: 'franzida', nextStep: 'passo_5_estagio' }
         ]
     },
 
