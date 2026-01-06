@@ -91,7 +91,7 @@ function App() {
       console.log("FORM SUBMITTED:", finalData);
 
       // Webhook submission
-      const WEBHOOK_URL = 'https://n8n.ryanp12.com.br/webhook/quiz-persianas'; // Placeholder URL, can be adjusted
+      const WEBHOOK_URL = 'https://fluxo-n8n.axmxa0.easypanel.host/webhook/Quiz';
       
       fetch(WEBHOOK_URL, {
         method: 'POST',
