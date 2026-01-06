@@ -3,8 +3,19 @@ import Layout from './components/Layout';
 import StepQuestion from './components/StepQuestion';
 import { Progress } from './components/ui/progress';
 import { STEPS } from './steps';
+import { AB_CONFIG, getVariant } from './ab_test';
 
 function App() {
+  const variant = getVariant();
+  
+  // Aplicar modificações da variante B se ativa
+  const currentSteps = STEPS.map(step => {
+    if (variant === 'B' && AB_CONFIG.variants.B.modifications[step.id]) {
+      return { ...step, ...AB_CONFIG.variants.B.modifications[step.id] };
+    }
+    return step;
+  });
+
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [formData, setFormData] = useState(() => {
     const params = new URLSearchParams(window.location.search);
@@ -21,7 +32,7 @@ function App() {
   const [currentItem, setCurrentItem] = useState({});
   const [loopCount, setLoopCount] = useState(0);
 
-  const activeStep = STEPS[currentStepIndex];
+  const activeStep = currentSteps[currentStepIndex];
   const phase = activeStep.phase || 1;
   const totalPhases = 8;
   const progressValue = Math.max(5, (phase / totalPhases) * 100);
@@ -45,7 +56,7 @@ function App() {
           setItems(prev => [...prev, { ...currentItem, item_index: items.length + 1 }]);
           setCurrentItem({});
           setLoopCount(prev => prev + 1);
-          const step2Index = STEPS.findIndex(s => s.id === 'passo_2_ambiente');
+          const step2Index = currentSteps.findIndex(s => s.id === 'passo_2_ambiente');
           setCurrentStepIndex(step2Index);
           return;
         } else {
@@ -79,7 +90,7 @@ function App() {
         finalNextStepId = 'passo_8_captura';
       }
 
-      const nextIndex = STEPS.findIndex(s => s.id === finalNextStepId);
+      const nextIndex = currentSteps.findIndex(s => s.id === finalNextStepId);
       if (nextIndex !== -1) {
         setCurrentStepIndex(nextIndex);
       }
@@ -90,7 +101,8 @@ function App() {
         meta: { 
           tipo_quiz: activeStep.id,
           data_envio: new Date().toISOString(),
-          total_itens: items.length + 1
+          total_itens: items.length + 1,
+          ab_variant: variant
         }
       };
       
