@@ -81,6 +81,7 @@ span,
 label,
 button {
   text-wrap: balance;
+  text-wrap: pretty; /* Fallback e melhoria para navegadores modernos */
 }
 
 button {
