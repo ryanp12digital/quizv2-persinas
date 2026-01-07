@@ -108,7 +108,7 @@ function App() {
       
       console.log("FORM SUBMITTED:", finalData);
 
-      const WEBHOOK_URL = 'https://fluxo-n8n.axmxa0.easypanel.host/webhook/Quiz';
+      const WEBHOOK_URL = 'https://fluxo-n8n.axmxa0.easypanel.host/webhook/quizv2';
       
       fetch(WEBHOOK_URL, {
         method: 'POST',
